@@ -1,5 +1,5 @@
 # Movies Browser
-# Demo [See To Do List](https://karolinaj33.github.io/movies-browser/)
+# Demo [See Movies Browser](https://karolinaj33.github.io/movies-browser/)
 
 # Getting Started with Create React App
 
