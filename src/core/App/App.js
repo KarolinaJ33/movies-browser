@@ -1,17 +1,12 @@
-import './App.css';
-import { ThemeProvider } from 'styled-components';
-import { GlobalStyle } from './GlobalStyle';
-import { theme } from './theme'; 
-import MoviesBrowser from '././features/MoviesBrowser/MoviePage/MovieTile';
+import { HashRouter } from 'react-router-dom/cjs/react-router-dom';
+import Navigation from '../../common/Navigation';
+import { Switch } from 'react-router-dom/cjs/react-router-dom.min';
 
-function App() {
+export const App = () => (
+  <HashRouter>
+    <Navigation />
+    <Switch>
+    </Switch>
+  </HashRouter>
+);
 
-  return (
-    <ThemeProvider theme={theme}>
-    <GlobalStyle />
-    <MoviesBrowser />
-  </ThemeProvider>
-  );
-}
-
-export default App;
