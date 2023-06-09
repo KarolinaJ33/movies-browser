@@ -1,11 +1,10 @@
 export const theme = {
-    color: {
+    colors: {
         white: "#FFFFFF",
         pageBackground: "#F5F5FA",
         mystic: "#E4E6F0",
         darkerGrey: "#7E839A",
         black: "#000000",
-        woodSmoke: "#18181B",
     },
 
     breakpoint: {
@@ -14,5 +13,4 @@ export const theme = {
         mobileMin: 420,
         fullPage: 1200,
       },
-
 };

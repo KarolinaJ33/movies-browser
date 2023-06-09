@@ -5,7 +5,7 @@ export const StyledNavigation = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: ${({ theme }) => theme.color.woodSmoke};
+  background-color: ${({ theme }) => theme.colors.woodSmoke};
   height: 94px;
   gap: 21px;
   padding: 0 12px;
@@ -59,7 +59,7 @@ export const StyledImg = styled(Icon)`
 `;
 
 export const StyledHeader = styled.div`
-  color: ${({ theme }) => theme.color.white};
+  color: ${({ theme }) => theme.colors.white};
   font-weight: 500;
   font-size: 24px;
   line-height: 40px;
@@ -75,11 +75,11 @@ export const StyledHeader = styled.div`
 export const StyledLink = styled.div`
   max-width: 1218px;
   font-size: 14px;
-  color: ${({ theme }) => theme.color.white};
+  color: ${({ theme }) => theme.colors.white};
   font-weight: 600;
   line-height: 21px;
   padding: 14px 24px;
-  background-color: ${({ theme }) => theme.color.woodSmoke};
+  background-color: ${({ theme }) => theme.colors.woodSmoke};
   text-transform: uppercase;
   text-decoration: none;
 
