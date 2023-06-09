@@ -10,8 +10,9 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        word-break: break-word;
         font-family: 'Poppins', sans-serif;
         margin: 0;
+        word-break: break-word;
+        background-color: ${({ theme }) => theme.colors.pageBackground};
     }
 `;
