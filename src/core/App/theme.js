@@ -1,5 +1,5 @@
 export const theme = {
-    color: {
+    colors: {
         white: "#FFFFFF",
         pageBackground: "#F5F5FA",
         mystic: "#E4E6F0",
@@ -15,4 +15,8 @@ export const theme = {
         mobileMin: 420,
         fullPage: 1200,
       },
-};
+      spinner: {
+        grayish: "#DDDDEE",
+        black: "#000000",
+      },
+    };
