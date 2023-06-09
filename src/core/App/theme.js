@@ -5,6 +5,8 @@ export const theme = {
         mystic: "#E4E6F0",
         darkerGrey: "#7E839A",
         black: "#000000",
+        mercury: "#E5E5E5",
+        stormGrey: "#74788B",
     },
 
     breakpoint: {
@@ -13,4 +15,8 @@ export const theme = {
         mobileMin: 420,
         fullPage: 1200,
       },
-};
+      spinner: {
+        grayish: "#DDDDEE",
+        black: "#000000",
+      },
+    };
