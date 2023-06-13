@@ -1,4 +1,5 @@
-import { Container, StyledImg, StyledMoviesBrowser, StyledDiv, StyledLink, StyledHeader, StyledNavigation } from "./styled";
+import { toMovie, toPeople } from "../../core/App/routes";
+import { Container, StyledImg, StyledMoviesBrowser, StyledDiv, StyledNavLink, StyledHeader, StyledNavigation } from "./styled";
 
 const Navigation = () => {
     return (
@@ -9,8 +10,8 @@ const Navigation = () => {
                     <StyledHeader>Movies Browser</StyledHeader>
                 </StyledMoviesBrowser>
                 <StyledDiv>
-                    <StyledLink>Movies</StyledLink>
-                    <StyledLink>People</StyledLink>
+                    <StyledNavLink to={toMovie}>Movies</StyledNavLink>
+                    <StyledNavLink to={toPeople}>People</StyledNavLink>
                 </StyledDiv>
             </Container>
             <div></div>

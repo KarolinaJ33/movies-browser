@@ -5,7 +5,6 @@ import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from './core/App/GlobalStyle';
 import { theme } from './core/App/theme';
 import { App } from './core/App/App';
-import MoviesBrowser from './features/MoviesBrowser';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,7 +12,6 @@ root.render(
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <App />
-      <MoviesBrowser />
     </ThemeProvider>
   </React.StrictMode>
 );
