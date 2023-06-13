@@ -1,7 +1,22 @@
+import Tile from "./Tile";
+import { Container, Header, Wrapper } from "./styled"; 
 
-const MovieList = () => {
-    return(
-        <div></div>
-    )
+const MoviesList = () => {
+    return (
+        <Container>
+            <Header>Popular movies</Header>
+            <Wrapper>
+                <Tile />
+                <Tile />
+                <Tile />
+                <Tile />
+                <Tile />
+                <Tile />
+                <Tile />
+                <Tile />
+            </Wrapper>
+        </Container>
+    );
 };
-export default MovieList;
+
+export default MoviesList;
