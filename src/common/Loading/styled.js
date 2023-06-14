@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
     justify-items: center;
     align-items: center;
 
-    @media(max-width: ${({ theme }) => theme.breakpoints.mobileMax}px) {
+    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         font-size: 17px;
         margin-top: 32px;
     }
