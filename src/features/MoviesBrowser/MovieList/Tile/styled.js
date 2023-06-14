@@ -1,19 +1,18 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    max-width: 1368px;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    margin: auto;
-    margin-top: 64px;
-    padding: 40px;
-    grid-gap: 40px;
-    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 16px;
+    margin-top: 24px;
+    padding: 16px;
+    background: ${({ theme }) => theme.colors.white};
+    box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         grid-template-columns: 1fr;
-        grid-gap: 13px;
-        margin-bottom: 84px;
+        margin-bottom: 16px;
     }
 `;
 
@@ -30,6 +29,11 @@ export const Title = styled.header`
     line-height: 120%;
     color: ${({ theme }) => theme.colors.black};
     margin-bottom: 24px;
+    margin-top: 8px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+        font-size: 16px;
+    }
 `;
 
 export const SubTitle = styled.div`
@@ -37,25 +41,7 @@ export const SubTitle = styled.div`
     font-size: 22px;
     line-height: 150%;
     color: ${({ theme }) => theme.colors.darkerGrey};
-    margin-bottom: 24px;
-`;
-
-export const Box = styled.span`
-    display: flex;
-`;
-
-export const Label = styled.div`
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 120%;
-    color: ${({ theme }) => theme.colors.stormGrey};
-    margin-right: 10px;
     margin-bottom: 8px;
-`;
-export const Info = styled.div`
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 120%;
 `;
 
 export const Genres = styled.ul`
@@ -64,12 +50,12 @@ export const Genres = styled.ul`
     list-style: none;
     margin: 16px -14px;
     padding-left: 0;
+    color: ${({ theme }) => theme.colors.woodSmoke};
 `;
 
 export const Genre = styled.li`
     padding: 8px 16px;
     background: ${({ theme }) => theme.colors.mystic};
-    color: ${({ theme }) => theme.colors.woodSmoke};
     font-weight: 400;
     font-size: 14px;
     border-radius: 5px;
@@ -100,10 +86,4 @@ export const Vouters = styled.span`
     font-weight: 400;
     font-size: 14px;
     line-height: 120%;
-`;
-
-export const Desription = styled.p`
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 160%;
 `;
