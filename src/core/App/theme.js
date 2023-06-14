@@ -15,7 +15,6 @@ export const theme = {
         tablet: 992,
         mobileMax: 767,
         mobileMin: 420,
-        fullPage: 1200,
       },
       spinner: {
         grayish: "#DDDDEE",

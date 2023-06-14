@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    max-width: 1200px;
+    max-width: 1368px;
     display: grid;
     grid-template-columns: auto 1fr;
     margin: auto;
@@ -15,7 +15,6 @@ export const Container = styled.div`
         grid-gap: 13px;
         margin-bottom: 84px;
     }
-    
 `;
 
 export const Image = styled.img`
@@ -23,22 +22,21 @@ export const Image = styled.img`
     height: 434px;
 `;
 
-export const Content = styled.div`
-`;
+export const Content = styled.div``;
 
 export const Title = styled.header`
     font-weight: 600;
     font-size: 36px;
     line-height: 120%;
-    color: "#000000";
+    color: ${({ theme }) => theme.colors.black};
     margin-bottom: 24px;
 `;
 
 export const SubTitle = styled.div`
     font-weight: 400;
-    font-size: 16px;
+    font-size: 22px;
     line-height: 150%;
-    color: "#7E839A";
+    color: ${({ theme }) => theme.colors.darkerGrey};
     margin-bottom: 24px;
 `;
 
@@ -50,7 +48,7 @@ export const Label = styled.div`
     font-weight: 400;
     font-size: 18px;
     line-height: 120%;
-    color: #74788B;
+    color: ${({ theme }) => theme.colors.stormGrey};
     margin-right: 10px;
     margin-bottom: 8px;
 `;
@@ -70,7 +68,8 @@ export const Genres = styled.ul`
 
 export const Genre = styled.li`
     padding: 8px 16px;
-    background: #E4E6F0;
+    background: ${({ theme }) => theme.colors.mystic};
+    color: ${({ theme }) => theme.colors.woodSmoke};
     font-weight: 400;
     font-size: 14px;
     border-radius: 5px;
