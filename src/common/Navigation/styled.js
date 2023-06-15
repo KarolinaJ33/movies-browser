@@ -12,17 +12,9 @@ export const StyledNavigation = styled.nav`
   padding: 0 12px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    height: 98px;
-    flex-wrap: wrap;
-    gap: 0px;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    height:98px;
-    gap: 22px;
+  height:142px;
+  display: grid;
+  gap: 0px;
   }
 `;
 
@@ -31,11 +23,10 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-basis: 520px;
-
   gap: 12px;
-
+  
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    flex-basis: 288px;
+  margin-top: 14px;
   }
 `;
 
@@ -53,9 +44,9 @@ export const StyledImg = styled(Icon)`
   width: 40px;
   height: 40px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    width: 17px;
-    height: 17px;
+  @media (max-width: ${({ theme }) => theme.breakpoint.navigation.smallPage}px) {
+  width: 17px;
+  height: 17px;
   }
 `;
 
@@ -67,7 +58,7 @@ export const StyledHeader = styled.div`
   letter-spacing: -1.5px;
   text-transform: capitalize;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.navigation.smallPage}px) {
     font-size: 13px;
     line-height: 130%;
   }
@@ -84,15 +75,19 @@ export const StyledNavLink = styled(NavLink)`
   text-transform: uppercase;
   text-decoration: none;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.navigation.smallPage}px) {
     font-size: 12px;
     padding: 8px 12px;
   }
 
-  &.active {
-    outline: 1px solid ${({ theme }) => theme.colors.white};
-    border-radius: 24px;
+  &:hover {
+      filter: brightness(90%);
   }
+
+  &.active {
+      outline: 1px solid ${({ theme }) => theme.colors.white};
+      border-radius: 24px;
+  }  
 `;
 
 
