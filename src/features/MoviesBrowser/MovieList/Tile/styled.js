@@ -67,7 +67,7 @@ export const Genres = styled.ul`
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    margin: 16px -14px;
+    margin: 8px -14px 39px;
     padding-left: 0;
     color: ${({ theme }) => theme.colors.woodSmoke};
 
