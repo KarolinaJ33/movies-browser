@@ -119,7 +119,7 @@ export const RateBig = styled.div`
 
 export const Vouters = styled.span`
     font-weight: 400;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 120%;
     color: ${({ theme }) => theme.colors.darkerGrey};
 
