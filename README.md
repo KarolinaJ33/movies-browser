@@ -1,7 +1,7 @@
-# Movies Browser
-# Demo [See Movies Browser](https://karolinaj33.github.io/movies-browser/)
+## Movies Browser
+## Demo [See Movies Browser](https://karolinaj33.github.io/movies-browser/)
 
-# Getting Started with Create React App
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
