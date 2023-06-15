@@ -8,7 +8,6 @@ export const theme = {
     mercury: "#E5E5E5",
     stormGrey: "#74788B",
     woodSmoke: "#18181B",
-    waterloo: "#7E839A",
     scienceBlue: "#0044CC",
   },
 

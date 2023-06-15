@@ -35,7 +35,7 @@ export const StyledInput = styled.input`
     
   &::placeholder {
         font-size: 16px;
-        color: ${({ theme }) => theme.colors.waterloo};
+        color: ${({ theme }) => theme.colors.darkerGrey};
         line-height: 130%;
 
         @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
