@@ -1,3 +1,4 @@
+import Pagination from "../../../common/Pagination";
 import Tile from "./Tile";
 import { Container, Header, Wrapper } from "./styled"; 
 
@@ -15,6 +16,7 @@ const MoviesList = () => {
                 <Tile />
                 <Tile />
             </Wrapper>
+            <Pagination />
         </Container>
     );
 };
