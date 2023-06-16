@@ -1,4 +1,3 @@
-
 const PeopleList = () => {
     return (
         <div></div>
