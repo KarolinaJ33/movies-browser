@@ -8,7 +8,7 @@ export const Container = styled.div`
     margin-top: 64px;
     padding: 40px;
     grid-gap: 40px;
-    background: white;
+    background: ${({ theme }) => theme.colors.white};
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         grid-template-columns: 1fr;

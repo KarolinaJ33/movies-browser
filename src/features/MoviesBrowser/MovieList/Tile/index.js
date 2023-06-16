@@ -8,9 +8,9 @@ import {
     SubTitle,
     Genres,
     Genre,
+    StarBox,
     Rate,
     RateBig,
-    RateLittle,
     Vouters,
 } from "./styled";
 import { ReactComponent as Star } from "../../MoviePage/MovieTile/icons/Star.svg";
@@ -23,14 +23,15 @@ const Tile = () => (
             <SubTitle>2020</SubTitle>
             <Genres>
                 <Genre>Action</Genre>
-                <Genre>Adventure</Genre>
                 <Genre>Drama</Genre>
+                <Genre>Adventure</Genre>
             </Genres>
             <Rate>
+                <StarBox>
                 <Star />
+                </StarBox>
                 <RateBig>7,8</RateBig>
-                <RateLittle>/ 10</RateLittle>
-                <Vouters>335 votes</Vouters>
+                <Vouters>35 votes</Vouters>
             </Rate>
         </Content>
     </Container>
