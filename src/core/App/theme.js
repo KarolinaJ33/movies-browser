@@ -16,6 +16,7 @@ export const theme = {
     mobileMax: 767,
     mobileMin: 420,
     fullPage: 1200,
+    widest: 1440,
     mediumPage: 1100,
     navigation: {
       smallPage: 500,
