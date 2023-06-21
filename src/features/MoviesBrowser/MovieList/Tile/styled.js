@@ -108,22 +108,24 @@ export const Rate = styled.span`
 export const RateBig = styled.div`
     font-weight: 600;
     font-size: 16px;
-    line-height: 130%;
+    line-height: 150%;
     margin-right: 8px;
     margin-left: 8px;
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         font-size: 13px;
+        line-height: 130%;
     }
 `;
 
 export const Vouters = styled.span`
     font-weight: 400;
     font-size: 16px;
-    line-height: 130%;
+    line-height: 150%;
     color: ${({ theme }) => theme.colors.darkerGrey};
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         font-size: 13px;
+        line-height: 130%;
     }
 `;
