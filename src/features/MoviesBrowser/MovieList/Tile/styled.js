@@ -13,7 +13,7 @@ export const Container = styled.div`
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         grid-template-columns: auto 1fr;
-        grid-gap: 16px;
+        grid-gap: 0 16px ;
     }
 `;
 
