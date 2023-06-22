@@ -16,7 +16,7 @@ export const Container = styled.div`
 
 export const Button = styled.button`
   padding: 8px 16px;
-  background-color: ${({ theme }) => theme.colors.mystic};
+  background-color: ${({ theme }) => theme.colors.pattensBlue};
   border: none;
   border-radius: 5px;
   display: flex;
@@ -24,14 +24,19 @@ export const Button = styled.button`
   gap: 6px;
   transition: 1s;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    padding: 8px 12px;
-    gap: 4px;
-  }
-
   &:hover {
     filter: brightness(103%);
   }
+  &:disabled {
+    background-color: ${({ theme }) => theme.colors.mystic};
+    &:hover {
+      filter: none;
+    }}
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    padding: 8px 12px;
+    gap: 4px;
+  } 
 `;
 
 export const ButtonText = styled.span`
@@ -45,7 +50,12 @@ export const ButtonText = styled.span`
 `;
 
 export const LeftArrow = styled(IconLeft)`
-   
+   color: ${({ theme }) => theme.colors.scienceBlue};
+
+   ${Button}:disabled & {
+    color: ${({ theme }) => theme.colors.darkerGrey};
+  }
+
    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     width: 5px;
     height: 8px;
@@ -53,7 +63,12 @@ export const LeftArrow = styled(IconLeft)`
 `;
 
 export const RightArrow = styled(IconRight)`
-   
+   color: ${({ theme }) => theme.colors.scienceBlue};
+
+   ${Button}:disabled & {
+    color: ${({ theme }) => theme.colors.darkerGrey};
+  }
+
    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     width: 5px;
     height: 8px;
@@ -65,7 +80,7 @@ export const PageCounter = styled.div`
   align-items: center;
   font-size: 16px;
   gap: 8px;
-  color: ${({theme})=> theme.colors.darkerGrey};
+  color: ${({ theme }) => theme.colors.darkerGrey};
   margin: 0 12px 0 12px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
@@ -77,6 +92,6 @@ export const PageCounter = styled.div`
 
 export const PageNumber = styled.span`
   font-weight: 600;
-  color: ${({theme})=> theme.colors.woodSmoke};
+  color: ${({ theme }) => theme.colors.woodSmoke};
 `;
 
