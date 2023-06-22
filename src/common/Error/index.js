@@ -1,6 +1,6 @@
 import { StyledHeader, StyledImg, Wrapper, StyledText, StyledButton } from "./styled";
 
-const Error = () => (
+export const Error = () => (
     <Wrapper>
         <StyledImg />
         <StyledHeader>Ooops! Something went wrong... </StyledHeader>

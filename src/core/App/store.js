@@ -1,20 +1,16 @@
 import createSagaMiddleware from "@redux-saga/core";
 import { configureStore } from "@reduxjs/toolkit";
 import rootSaga from "./rootSaga";
-import popularMoviesReducer from "../features/movies/MoviesList/popularMoviesSlice";
-import popularPeopleReducer from "../features/people/PeopleList/popularPeopleSlice";
-import genresReducer from "../features/movies/Genres/genresSlice";
-import movieDetailsReducer from "../features/movies/MovieDetails/movieDetailsSlice";
-import personDetailsReducer from "../features/people/PersonPage/personSlice";
+import popularPeopleReducer from "../../features/PeopleBrowser/PeopleList/popularPeopleSlice";
+import genresReducer from "../../features/MoviesBrowser/Genres/genresSlice";
+import personDetailsReducer from "../../features/PeopleBrowser/PersonPage/PersonSlice";
 
 const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
   reducer: {
-    popularMovies: popularMoviesReducer,
     genres: genresReducer,
     popularPeople: popularPeopleReducer,
-    movieDetails: movieDetailsReducer,
     personDetails: personDetailsReducer,
   },
   middleware: [sagaMiddleware],
