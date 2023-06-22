@@ -1,31 +1,31 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 40px auto 0;
+    width: 100%;
+    height: 100%;
     padding: 16px;
-    max-width: 1368px;
+    border-radius: 5px;
     background: ${({ theme }) => theme.colors.white};
     box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
+    display: grid;
+    grid-template-rows: auto 1fr;
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-        display: grid;
         grid-template-columns: auto 1fr;
-        grid-gap: 16px;
+        grid-gap: 0 16px;
     }
 `;
 
 export const Image = styled.img`
-    width: 292px;
-    height: 434px;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         margin-right: 10px;
         width: 114px;
-        height: 169px;
-        left: calc(50% - 114px / 2 - 71px);
+        height: auto;
+        margin-bottom: 16px;
     }
 `;
 
@@ -41,8 +41,8 @@ export const Title = styled.header`
     font-size: 22px;
     line-height: 130%;
     color: ${({ theme }) => theme.colors.woodSmoke};
-    margin-bottom: 24px;
-    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-top: 16px;
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         font-size: 16px;
@@ -68,8 +68,9 @@ export const Genres = styled.ul`
     flex-wrap: wrap;
     list-style: none;
     margin: 8px -14px 39px;
-    padding-left: 0;
+    padding-left: 10px;
     color: ${({ theme }) => theme.colors.woodSmoke};
+    gap: 8px;
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         font-size: 10px;
@@ -83,7 +84,6 @@ export const Genre = styled.li`
     font-weight: 400;
     font-size: 14px;
     border-radius: 5px;
-    margin: 8px;
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         font-size: 10px;
@@ -114,16 +114,18 @@ export const RateBig = styled.div`
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         font-size: 13px;
+        line-height: 130%;
     }
 `;
 
 export const Vouters = styled.span`
     font-weight: 400;
     font-size: 16px;
-    line-height: 120%;
+    line-height: 150%;
     color: ${({ theme }) => theme.colors.darkerGrey};
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         font-size: 13px;
+        line-height: 130%;
     }
 `;

@@ -2,11 +2,11 @@ import { styled } from "styled-components";
 
 export const Container = styled.div`
     max-width: 1368px;
-    margin: auto;
+    margin: 30px auto 0;
+    padding: 16px;
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-        max-width: 320px;
-        width: 100%;
+        max-width: auto;
         margin: 24px auto;
     }
 `;
@@ -31,6 +31,6 @@ export const Wrapper = styled.div`
     grid-template-rows: 1fr;
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    grid-template-columns: minmax(200px, 1fr);
-  }
+        grid-template-columns: minmax(200px, 1fr);
+    }
 `;
