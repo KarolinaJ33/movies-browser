@@ -1,5 +1,5 @@
 import { call, delay, put, takeLatest, } from "redux-saga/effects";
-import { fetchMoviesLoading, fetchMoviesSuccess } from "./popularMoviesSlice";
+import { fetchMoviesError, fetchMoviesLoading, fetchMoviesSuccess } from "./popularMoviesSlice";
 import { getPopularMovies } from "./getPopularMovies";
 
 function* fetchMoviesHandler() {
@@ -7,8 +7,8 @@ function* fetchMoviesHandler() {
         yield delay(1000);
         const movies = yield call(getPopularMovies);
         yield put(fetchMoviesSuccess(movies));
-    } catch (error) {
-        yield call(alert, "Błąd pobierania, spróbuj ponownie później")
+    } catch {
+        yield put(fetchMoviesError())
     }
 };
 

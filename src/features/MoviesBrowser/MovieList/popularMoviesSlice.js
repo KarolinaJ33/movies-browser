@@ -24,6 +24,9 @@ const popularMoviesSlice = createSlice({
     setTotalPages: (state, action) => {
       state.totalPages = action.payload;
     },
+    fetchMoviesError: (state) => {
+      state.status = "error";
+    },
   }
 });
 
@@ -32,6 +35,7 @@ export const {
   fetchMoviesLoading,
   setCurrentPage,
   setTotalPages,
+  fetchMoviesError,
 } = popularMoviesSlice.actions
 
 export const selectPopularMoviesState = (state) => state.popularMovies;

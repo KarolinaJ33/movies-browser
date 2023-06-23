@@ -3,10 +3,19 @@ import Pagination from "../../../common/Pagination";
 import MovieTile from "./MovieTile";
 import { Container, Header, Wrapper } from "./styled";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchMoviesLoading, fetchMoviesSuccess, selectCurrentPage, selectPopularMoviesStatus, selectTotalPages, setCurrentPage, setTotalPages } from "./popularMoviesSlice";
+import {
+    fetchMoviesLoading,
+    fetchMoviesSuccess,
+    selectCurrentPage,
+    selectPopularMoviesStatus,
+    selectTotalPages,
+    setCurrentPage,
+    setTotalPages
+} from "./popularMoviesSlice";
 import { useState } from "react";
 import { API_KEY, ApiPopularMovies } from "../../../core/App/apiCodes";
 import { Loading } from "../../../common/Loading";
+import Error from "../../../common/Error";
 
 const MoviesList = () => {
     const [movies, setMovies] = useState([]);
@@ -29,7 +38,7 @@ const MoviesList = () => {
                 dispatch(setTotalPages(Math.min(data.total_pages, 500)));
             }
             catch (error) {
-                console.error("cos poszło nie tak")
+                console.error(error)
             }
             finally {
                 dispatch(fetchMoviesLoading(false));
@@ -46,6 +55,22 @@ const MoviesList = () => {
             />
         )));
 
+    const handleFirstPage = () => {
+        dispatch(setCurrentPage(1));
+    };
+
+    const handlePrevPage = () => {
+        dispatch(setCurrentPage(currentPage - 1));
+    };
+
+    const handleNextPage = () => {
+        dispatch(setCurrentPage(currentPage + 1));
+    };
+
+    const handleLastPage = () => {
+        dispatch(setCurrentPage(totalPages));
+    };
+
     return (
         <>
             {status === "loading" ?
@@ -57,15 +82,15 @@ const MoviesList = () => {
                             {renderMovies()}
                         </Wrapper>
                         <Pagination
-                            onPrevPage={() => dispatch(setCurrentPage(currentPage - 1))}
-                            onNextPage={() => dispatch(setCurrentPage(currentPage + 1))}
                             currentPage={currentPage}
                             totalPages={totalPages}
-                            onLastPage={() => dispatch(setCurrentPage(totalPages))}
-                            onFirstPage={() => dispatch(setCurrentPage(1))}
+                            onFirstPage={handleFirstPage}
+                            onPrevPage={handlePrevPage}
+                            onNextPage={handleNextPage}
+                            onLastPage={handleLastPage}
                         />
                     </Container> :
-                    <div></div>}
+                    <Error />}
         </>
     );
 };
