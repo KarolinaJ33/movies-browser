@@ -1,18 +1,25 @@
 {
   "files": {
-    "main.js": "/movies-browser/static/js/main.ccfb83dc.js",
+    "main.js": "/movies-browser/static/js/main.8e487569.js",
     "static/js/787.94542015.chunk.js": "/movies-browser/static/js/787.94542015.chunk.js",
     "static/media/poster.png": "/movies-browser/static/media/poster.9ca86092227f3ca40149.png",
+    "static/media/noResult.svg": "/movies-browser/static/media/noResult.d286a671797f1244d0ba26eeaa04cf6f.svg",
     "static/media/Star.svg": "/movies-browser/static/media/Star.6666ab69561e6d50d181c5591ca1fcf4.svg",
+    "static/media/star.svg": "/movies-browser/static/media/star.291f146da8ec732e66d3333dc945ea1b.svg",
+    "static/media/no-person.svg": "/movies-browser/static/media/no-person.5414a8378899be62302cc85f547bf056.svg",
+    "static/media/person.svg": "/movies-browser/static/media/person.50fa67ba8b05e42674fce5c3bc99f766.svg",
+    "static/media/Danger.svg": "/movies-browser/static/media/Danger.a514e9c64a76d5cf149bdd7443857605.svg",
+    "static/media/no-poster.svg": "/movies-browser/static/media/no-poster.09e98977e1f2ccf6bea4bd25a4d25066.svg",
     "index.html": "/movies-browser/index.html",
     "static/media/vectorRight.svg": "/movies-browser/static/media/vectorRight.c22fe6c9cd43f5eac2cf6e458c5b9f38.svg",
     "static/media/Video.svg": "/movies-browser/static/media/Video.64519bacc48e8f0f2a39675e55643d9b.svg",
     "static/media/vectorLeft.svg": "/movies-browser/static/media/vectorLeft.99798cae29ce9ad8582f7ab91a3c109c.svg",
+    "static/media/spinner.svg": "/movies-browser/static/media/spinner.3921d0c934846dd86febc2fcaeedc2e5.svg",
     "static/media/Search.svg": "/movies-browser/static/media/Search.5aa061ea8ce958db2e2c813d81e21cf7.svg",
-    "main.ccfb83dc.js.map": "/movies-browser/static/js/main.ccfb83dc.js.map",
+    "main.8e487569.js.map": "/movies-browser/static/js/main.8e487569.js.map",
     "787.94542015.chunk.js.map": "/movies-browser/static/js/787.94542015.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.ccfb83dc.js"
+    "static/js/main.8e487569.js"
   ]
 }
