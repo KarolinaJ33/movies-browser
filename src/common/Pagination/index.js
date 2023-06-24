@@ -1,25 +1,35 @@
-import { Button, ButtonText, Container, LeftArrow, PageCounter, PageNumber, RightArrow } from "./styled";
 
-const Pagination = () => {
+import {
+    Button,
+    ButtonText,
+    Container,
+    LeftArrow,
+    PageCounter,
+    PageNumber,
+    RightArrow
+} from "./styled";
+
+const Pagination = ({ onNextPage, onPrevPage, currentPage, totalPages, onFirstPage, onLastPage }) => {
+
     return (
         <Container>
-            <Button>
+            <Button onClick={onFirstPage} disabled={currentPage === 1}>
                 <LeftArrow />
                 <LeftArrow />
                 <ButtonText>First</ButtonText>
             </Button>
-            <Button>
+            <Button onClick={onPrevPage} disabled={currentPage === 1}>
                 <LeftArrow />
                 <ButtonText>Previous</ButtonText>
             </Button>
             <PageCounter>
-                Page <PageNumber>1</PageNumber> of <PageNumber>500</PageNumber>
+                Page <PageNumber>{currentPage}</PageNumber> of <PageNumber>{totalPages}</PageNumber>
             </PageCounter>
-            <Button>
-                <ButtonText>Next</ButtonText>
+            <Button onClick={onNextPage} disabled={currentPage === totalPages}>
+                <ButtonText >Next</ButtonText>
                 <RightArrow />
             </Button>
-            <Button>
+            <Button onClick={onLastPage} disabled={currentPage === totalPages}>
                 <ButtonText>Last</ButtonText>
                 <RightArrow />
                 <RightArrow />
