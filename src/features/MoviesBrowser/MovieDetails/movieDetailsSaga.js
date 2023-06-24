@@ -1,3 +1,1 @@
-export const movieDetailsSaga = () => {
-    const details = yield call(getMovieDetails, { movieId: movieId });
-};
+export const movieDetailsSaga = () => {};

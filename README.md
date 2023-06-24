@@ -1,12 +1,24 @@
-## Movies Browser
+## <h1 align="center">🎬 Movies Browser <h1>
 ## Demo [See Movies Browser](https://karolinaj33.github.io/movies-browser/)
+## Contributors:
+- [Marzena Malka](https://github.com/maram-9)
+- [Karolina Jasiówka](https://github.com/KarolinaJ33)
+- [Jakub Woźny](https://github.com/jakub2787)
 
-## Getting Started with Create React App
+## Technologies:
+<p align="left"><a href="https://skillicons.dev/icons?i=html" target="_blank" rel="noreferrer"><img src="https://skillicons.dev/icons?i=html" alt="html5"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"><img src="https://skillicons.dev/icons?i=js" alt="JavaScript"/></a>  <a href="https://styled-components.com" target="_blank" rel="noreferrer"><img src="https://skillicons.dev/icons?i=styledcomponents" alt="styledcomponents"/></a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://skillicons.dev/icons?i=react" alt="react"/>  </a> <a href="https://redux.js.org" target="_blank" rel="noreferrer"> <img src="https://skillicons.dev/icons?i=redux" alt="redux"/> </a> <a href="https://webpack.js.org" target="_blank" rel="noreferrer"><img src="https://skillicons.dev/icons?i=webpack" alt="webpack"/> </a> <a href="https://www.figma.com" target="_blank" rel="noreferrer"><img src="https://skillicons.dev/icons?i=figma" alt="figma"/> </a> </p>
 
+## API source fetched from
+
+[The Movie Database](https://www.themoviedb.org/)
+
+## Description
+This web application was created as part of the YouCode programming course. You can search for your favorite movies and actors based on their popularity, and get detailed information about the movie and its cast. 
+
+ 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
-
+### Available Scripts
 In the project directory, you can run:
 
 ### `npm start`

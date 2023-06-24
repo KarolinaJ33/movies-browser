@@ -12,4 +12,4 @@ const movieDetailsSlice = createSlice({
   },
 });
 
-export default movieDetailsSlice;
+export default movieDetailsSlice.reducer;

@@ -16,4 +16,4 @@ export const StyledMainHeader = styled.h1`
     margin-top: 24px;
     padding-left: 24px;
   }
-`
+`;

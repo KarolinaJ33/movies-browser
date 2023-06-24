@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from 'styled-components';
+import { Provider } from "react-redux";
+import store from './core/App/store';
 import { GlobalStyle } from './core/App/GlobalStyle';
 import { theme } from './core/App/theme';
 import { App } from './core/App/App';
@@ -11,12 +13,12 @@ import store from './core/App/store';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <Provider store={store}>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
         <GlobalStyle />
         <App />
-      </Provider>
-    </ThemeProvider>
+      </ThemeProvider>
+    </Provider>
   </React.StrictMode>
 );
 

@@ -8,3 +8,4 @@ export const movieID = "https://api.themoviedb.org/3/movie/";
 export const apiMovieDetails = "movie/";
 export const details = "https://api.themoviedb.org/3/movie/{movie_id}";
 export const apiGenres = "https://api.themoviedb.org/3/genre/movie/list";
+export const PersonImageAPI = "https://image.tmdb.org/t/p/w200/";
