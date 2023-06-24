@@ -21,7 +21,6 @@ const popularPeopleSlice = createSlice({
       state.totalPages = payload.data.total_pages > 500 ? 500 : payload.data.total_pages;
       state.totalResults = payload.data.total_results;
       state.people = payload.data.results;
-
   },
     fetchPopularPeopleError:(state) => {
       state.status = "error";

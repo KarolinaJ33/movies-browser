@@ -4,7 +4,7 @@ import { MainHeader } from "../../../common/MainHeader";
 import { List, ListItem, StyledLink } from "./styled";
 import { Container } from "../../../common/Container/styled";
 import { PersonTile } from "../../../common/PersonTile";
-import { Error } from "../../../common/Error";
+import Error from "../../../common/Error";
 import { Loading} from "../../../common/Loading";
 import { NoResult} from "../../../common/NoResult";
 import  Pagination from "../../../common/Pagination";
@@ -67,7 +67,7 @@ import {
               </ListItem>
             ))}
           </List>
-          <Pagination pageNumber={pageNumber} totalPages={totalPages}/>
+          <Pagination pageNumber={pageNumber} totalPages={totalPages} />
         </Container>
         };
       </>
