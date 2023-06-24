@@ -13,4 +13,4 @@ const popularMoviesSlice = createSlice({
   },
 });
 
-export default popularMoviesSlice;
+export default popularMoviesSlice.reducer;
