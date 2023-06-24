@@ -7,8 +7,6 @@ import store from './core/App/store';
 import { GlobalStyle } from './core/App/GlobalStyle';
 import { theme } from './core/App/theme';
 import { App } from './core/App/App';
-import { Provider } from 'react-redux';
-import store from './core/App/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
