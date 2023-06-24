@@ -11,7 +11,7 @@ import {
     RateBig,
     Vouters,
 } from "./styled";
-import { ReactComponent as Star } from "../../../../common/images/Star.svg";
+import { ReactComponent as Star } from "../../../../common/images/star.svg";
 import noPoster from "../../../../common/images/noPoster.svg";
 
 const MovieTile = ({ movie }) => {

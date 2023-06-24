@@ -16,7 +16,7 @@ import {
     Vouters,
     Desription,
 } from "./styled";
-import { ReactComponent as Star } from "../../../common/images/Star.svg";
+import { ReactComponent as Star } from "../../../common/images/star.svg";
 
 const MovieDetails = () => (
     <Container>
