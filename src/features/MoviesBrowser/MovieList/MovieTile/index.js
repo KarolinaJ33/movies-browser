@@ -1,23 +1,24 @@
 import {
-    Container,
+    PosterWrapper,
     Image,
     Content,
     Title,
     SubTitle,
     Genres,
     Genre,
-    StarBox,
+    Star,
     Rate,
     RateBig,
     Vouters,
+    Tile
 } from "./styled";
-import { ReactComponent as Star } from "../../../../common/images/star.svg";
 import noPoster from "../../../../common/images/noPoster.svg";
 
 const MovieTile = ({ movie }) => {
     
     return (
-        <Container>
+        <Tile>
+            <PosterWrapper>
             {movie.poster_path ? (
                 <Image
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
@@ -29,6 +30,7 @@ const MovieTile = ({ movie }) => {
                 alt="does not have a poster"
                 />
             )}
+            </PosterWrapper>
             <Content>
                 <Title>{movie.title}</Title>
                 <SubTitle>{new Date(movie.release_date).getFullYear()}</SubTitle>
@@ -38,15 +40,13 @@ const MovieTile = ({ movie }) => {
                     <Genre>Adventure</Genre>
                 </Genres>
                 <Rate>
-                    <StarBox>
-                        <Star />
-                    </StarBox>
+                    <Star />
                     <RateBig>{movie.vote_average}</RateBig>
                     <Vouters>{movie.vote_count} votes</Vouters>
                 </Rate>
             </Content>
-        </Container>
-    )
+        </Tile>
+    );
 };
 
 export default MovieTile;
