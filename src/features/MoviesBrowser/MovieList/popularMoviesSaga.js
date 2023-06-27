@@ -1,17 +1,25 @@
-import { call, delay, put, takeLatest, } from "redux-saga/effects";
-import { fetchMoviesError, fetchMoviesLoading, fetchMoviesSuccess } from "./popularMoviesSlice";
-import { getPopularMovies } from "./getPopularMovies";
+import { call, select, put, takeLatest, } from "redux-saga/effects";
+import { fetchMoviesListError, fetchMoviesListSuccess, goToPage, selectQuery, selectPage } from "./popularMoviesSlice";
+import { searchMovie } from "../../../common/Navigation/Search/getSearch";
+import { popularMovies } from "../../../features/MoviesBrowser/MovieList/getPopularMovies";
 
-function* fetchMoviesHandler() {
+
+function* fetchPopularMoviesHandler() {
     try {
-        yield delay(1000);
-        const movies = yield call(getPopularMovies);
-        yield put(fetchMoviesSuccess(movies));
-    } catch {
-        yield put(fetchMoviesError())
+      const page = yield select(selectPage);
+      const query = yield select(selectQuery);
+      let data;
+      if (query !== "") {
+        data = yield call(searchMovie, { page: page, query: query });
+      } else {
+        data = yield call(popularMovies, { page: page });
+      }
+      yield put(fetchMoviesListSuccess({ data }));
+    } catch (error) {
+      yield put(fetchMoviesListError());
     }
-};
-
-export function* PopularMoviesSaga() {
-    yield takeLatest(fetchMoviesLoading.type, fetchMoviesHandler)
-};
+  }
+  
+  export function* popularMoviesSaga() {
+    yield takeLatest(goToPage.type, fetchPopularMoviesHandler);
+  }

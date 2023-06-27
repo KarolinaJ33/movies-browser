@@ -17,7 +17,7 @@ export const Tile = styled.div`
 
     &:hover {
         transform: scale(105%);
-        box-shadow: 0px 4px 12px ${({ theme }) => theme.colors.waterloo};
+        box-shadow: 0px 4px 12px ${({ theme }) => theme.colors.darkerGrey};
     }
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
@@ -108,7 +108,7 @@ export const Year = styled.div`
     margin: 0;
     line-height: 1.5;
     margin: 8px 0 0 0px;
-    color: ${({ theme }) => theme.colors.waterloo};
+    color: ${({ theme }) => theme.colors.darkerGrey};
 
     @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
         font-size: 14px;
@@ -198,8 +198,9 @@ export const Star = styled(StarIcon)`
 
 export const Rate = styled.div`
   font-weight: 600;
-  font-size: 16px;
+  font-size: 20px;
   padding: 0 12px;
+  color: ${({ theme }) => theme.colors.woodSmoke};
 
     @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
         font-size: 13px;
@@ -214,7 +215,7 @@ export const Rate = styled.div`
 
 export const Votes = styled.div`
     font-size: 16px;
-    color: ${({ theme }) => theme.colors.waterloo};
+    color: ${({ theme }) => theme.colors.darkerGrey};
     line-height: 1.5;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {

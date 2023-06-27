@@ -6,41 +6,52 @@ const popularMoviesSlice = createSlice({
     currentPage: 1,
     movies: [],
     genres: [],
-    status: "initial",
+    status: "loading",
     totalPages: 0,
+    query: "",
+    totalResults: 0,
   },
   reducers: {
-    fetchMoviesLoading: (state) => {
-      state.status = "loading";
-    },
-    fetchMoviesSuccess: (state, { payload }) => {
+    fetchMoviesListSuccess: (state, {payload: movies}) => {
+      state.status="loading";
+      state.movies = movies.data.results;
+      state.genres = movies.genres;
       state.status = "success";
-      state.movies = payload.results;
+      state.totalPages = movies.data.total_pages > 500 ? 500 : movies.data.total_pages;
+      state.totalResults = movies.data.total_results;
     },
-    setCurrentPage: (state, action) => {
-      state.status = "loading";
-      state.currentPage = action.payload;
-    },
-    setTotalPages: (state, action) => {
-      state.totalPages = action.payload;
-    },
-    fetchMoviesError: (state) => {
+    
+    fetchMoviesListError: (state) => {
       state.status = "error";
     },
-  }
+    goToPage: (state, { payload: movies }) => {
+      state.status = "loading";
+      state.page = movies.page;
+    },
+    setQuery: (state, { payload }) => {
+      state.status = "loading";
+      state.query = payload.query;
+    },
+  },
 });
 
 export const {
-  fetchMoviesSuccess,
-  fetchMoviesLoading,
-  setCurrentPage,
-  setTotalPages,
-  fetchMoviesError,
+  fetchMoviesListSuccess,
+  fetchMoviesListError,
+  goToPage,
+  setQuery,
 } = popularMoviesSlice.actions
 
-export const selectPopularMoviesState = (state) => state.popularMovies;
-export const selectPopularMoviesStatus = (state) => selectPopularMoviesState(state).status;
-export const selectCurrentPage = (state) => state.popularMovies.currentPage;
-export const selectTotalPages = (state) => state.popularMovies.totalPages;
+export const selectStatePopularMovies = (state) => state.popularMovies;
+export const selectPopularMovies = (state) =>
+  selectStatePopularMovies(state).movies;
+export const selectStatus = (state) => selectStatePopularMovies(state).status;
+export const selectPage = (state) => selectStatePopularMovies(state).page;
+export const selectTotalPages = (state) =>
+  selectStatePopularMovies(state).totalPages;
+export const selectQuery = (state) => selectStatePopularMovies(state).query;
+export const selectTotalResults = (state) =>
+  selectStatePopularMovies(state).totalResults;
+
 
 export default popularMoviesSlice.reducer;
