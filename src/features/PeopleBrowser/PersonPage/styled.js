@@ -33,7 +33,7 @@ export const List = styled.ul`
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
-  color: ${({ theme }) => theme.colors.woodsmoke};
+  color: ${({ theme }) => theme.colors.black};
 `;
 
 export const Bottom = styled.div`

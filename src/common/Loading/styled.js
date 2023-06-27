@@ -13,9 +13,10 @@ export const Wrapper = styled.div`
     justify-items: center;
     align-items: center;
 
+
     @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         font-size: 17px;
-        margin-top: 32px;
+        margin-top: 24px;
     }
 `;
 
@@ -23,7 +24,8 @@ export const StyledSpinner = styled(Spinner)`
     margin: 120px auto 24px;
     animation: ${rotate} 1s linear infinite;
     color: ${({ theme }) => theme.colors.grayish};
-    height: auto;
+    height: 90px;
+    width: 90px;
 
     @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         margin-top: 60px;
