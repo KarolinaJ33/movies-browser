@@ -5,7 +5,7 @@ import { List, ListItem, StyledLink } from "./styled";
 import { Container } from "../../../common/Container/styled";
 import { PersonTile } from "../../../common/PersonTile";
 import Error from "../../../common/Error";
-import { Loading} from "../../../common/Loading";
+import { Loading } from "../../../common/Loading";
 import { NoResult} from "../../../common/NoResult";
 import  Pagination from "../../../common/Pagination";
 import { toPerson } from "../../../core/App/routes";
@@ -52,7 +52,12 @@ import {
       <Error /> : totalResults === 0 ?
       <NoResult /> :
         <Container>
-          <MainHeader title={`Popular People`}/>
+          <MainHeader 
+            title={
+              query
+                ? `Search results for “${query}” (${totalResults})`
+                : `Popular People`
+            }/>
           <List>
             {popularPeople.map((person) => (
               <ListItem key={person.id}>

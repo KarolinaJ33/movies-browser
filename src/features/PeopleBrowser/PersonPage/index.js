@@ -8,7 +8,7 @@ import {
   //selectCast,
   selectCredits,
   selectDetails,
-  selectStatus
+  selectStatus,
 } from "./PersonSlice";
 import { PersonTile } from "./PersonTile";
 import { MovieTile } from "../../../common/MovieTile";
@@ -20,66 +20,48 @@ import { Bottom, List, StyledLink } from "./styled";
 import { toMovie } from "../../../core/App/routes";
 
 export const PersonPage = () => {
-    const dispatch = useDispatch();
-    const { personId } = useParams();
-    const details = useSelector(selectDetails);
-    //const cast = useSelector(selectCast);
-    const credits = useSelector(selectCredits);
-    const status = useSelector(selectStatus);
-  
-    useEffect(() => {
-      const fetchData = async () => {
-        try {
-          dispatch(getPersonId({ personId: personId }));
-          dispatch(fetchPersonDetails());
-        } catch (error) {
-          dispatch(fetchPersonDetailsError());
-        }
-      };
-  
-      fetchData();
-    }, [personId, dispatch]);
-  
-    if (status === "loading") {
-      return <Loading />;
-    }
-  
-    if (status === "error") {
-      return <Error />;
-    }
-  
-    return (
-      <Container>
-        <PersonTile
-          poster={details.profile_path}
-          name={details.name}
-          birthday={details.birthday}
-          birthplace={details.place_of_birth}
-          biography={details.biography}
-        />
-        {credits.cast.length > 0 && (
-         <>
+  const dispatch = useDispatch();
+  const { personId } = useParams();
+  const details = useSelector(selectDetails);
+  //const cast = useSelector(selectCast);
+  const credits = useSelector(selectCredits);
+  const status = useSelector(selectStatus);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        dispatch(getPersonId({ personId: personId }));
+        dispatch(fetchPersonDetails());
+      } catch (error) {
+        dispatch(fetchPersonDetailsError());
+      }
+    };
+
+    fetchData();
+  }, [personId, dispatch]);
+
+  if (status === "loading") {
+    return <Loading />;
+  }
+
+  if (status === "error") {
+    return <Error />;
+  }
+
+  return (
+    <Container>
+      <PersonTile
+        poster={details.profile_path}
+        name={details.name}
+        birthday={details.birthday}
+        birthplace={details.place_of_birth}
+        biography={details.biography}
+      />
+      {credits.cast.length > 0 && (
+        <>
           <MainHeader title={`Movies - cast (${credits.cast.length})`} />
           <List>
-          {credits.cast.map((movie) => (
-              <div key={movie.id}>
-                <StyledLink to={toMovie({ movieId: movie.id })}>
-                  <PersonTile
-                    movie={movie}
-                    id={movie.id}
-                    genres={movie.genre_ids}
-                  />
-                </StyledLink>
-              </div>
-            ))}
-          </List>
-          </>
-        )}
-        {credits.crew.length > 0 && (
-          <>
-          <MainHeader title={`Movies - crew (${credits.crew.length})`} />
-          <List>
-          {credits.crew.map((movie) => (
+            {credits.cast.map((movie) => (
               <div key={movie.id}>
                 <StyledLink to={toMovie({ movieId: movie.id })}>
                   <MovieTile
@@ -91,9 +73,27 @@ export const PersonPage = () => {
               </div>
             ))}
           </List>
-          </>
-        )}
-        <Bottom />
-      </Container>
-    );
-  };
+        </>
+      )}
+      {credits.crew.length > 0 && (
+        <>
+          <MainHeader title={`Movies - crew (${credits.crew.length})`} />
+          <List>
+            {credits.crew.map((movie) => (
+              <div key={movie.id}>
+                <StyledLink to={toMovie({ movieId: movie.id })}>
+                  <MovieTile
+                    movie={movie}
+                    id={movie.id}
+                    genres={movie.genre_ids}
+                  />
+                </StyledLink>
+              </div>
+            ))}
+          </List>
+        </>
+      )}
+      <Bottom />
+    </Container>
+  );
+};

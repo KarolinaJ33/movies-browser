@@ -30,4 +30,4 @@ export const getPersonCredits = async({personId}) => {
           console.error(error);
           throw error;
     }
-}
+};
