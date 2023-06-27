@@ -32,7 +32,5 @@ export const MovieTile = ({ movie, genres }) => {
                 </Rating>
             </Content>
         </Tile>
-    );
-};
-
-export default MovieTile;
+    )
+}

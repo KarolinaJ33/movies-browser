@@ -1,44 +1,109 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
-export const List = styled.ul`
-  display: grid;
-  gap: 24px;
-  grid-template-columns: repeat(auto-fill, minmax(208px, 1fr));
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  margin-bottom: 55px;
+export const Container = styled.div`
+    max-width: 1368px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    margin: auto;
+    margin-top: 64px;
+    padding: 40px;
+    grid-gap: 40px;
+    background: ${({ theme }) => theme.colors.white};
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    gap: 16px;
-    grid-template-columns: repeat(auto-fill, minmax(162px, 1fr));
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+        grid-template-columns: 1fr;
+        grid-gap: 13px;
+        margin-bottom: 84px;
+    }
 `;
 
-export const Item = styled.li`
-  transition: transform 0.15s ease-out;
-  &:hover {
-    transform: translateY(-6px);
-  }
-  @media (max-width: ${({ theme }) => theme.breakpoint.fullPage}px) {
-    &:hover {
-      transform: translateY(-4px);
-    }
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    &:hover {
-      transform: translateY(0);
-    }
-  }
+export const Image = styled.img`
+    width: 292px;
+    height: 434px;
 `;
 
-export const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: ${({ theme }) => theme.colors.white};
+export const Content = styled.div``;
+
+export const Title = styled.header`
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 120%;
+    color: ${({ theme }) => theme.colors.black};
+    margin-bottom: 24px;
+`;
+
+export const SubTitle = styled.div`
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 150%;
+    color: ${({ theme }) => theme.colors.darkerGrey};
+    margin-bottom: 24px;
+`;
+
+export const Box = styled.span`
+    display: flex;
+`;
+
+export const Label = styled.div`
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    color: ${({ theme }) => theme.colors.stormGrey};
+    margin-right: 10px;
+    margin-bottom: 8px;
+`;
+export const Info = styled.div`
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+`;
+
+export const Genres = styled.ul`
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 16px -14px;
+    padding-left: 0;
+`;
+
+export const Genre = styled.li`
+    padding: 8px 16px;
+    background: ${({ theme }) => theme.colors.mystic};
+    color: ${({ theme }) => theme.colors.woodSmoke};
+    font-weight: 400;
+    font-size: 14px;
+    border-radius: 5px;
+    margin: 8px;
+`;
+
+export const Rate = styled.span`
+    display: flex;
+    align-items: center;
+`;
+
+export const RateBig = styled.div`
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 130%;
+    margin-right: 8px;
+    margin-left: 8px;
+`;
+
+export const RateLittle = styled.div`
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 120%;
+    margin-right: 8px;
+`;
+
+export const Vouters = styled.span`
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 120%;
+`;
+
+export const Desription = styled.p`
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 160%;
 `;
