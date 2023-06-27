@@ -1,78 +1,98 @@
 import { useEffect } from "react";
 import Pagination from "../../../common/Pagination";
-import MovieTile from "../../../common/MovieTile";
-import { MainHeader } from "../../../common/MainHeader";
-import { Container } from "../../../common/Container/styled";
+import MovieTile from "./MovieTile";
+import { Container, Header, Wrapper } from "./styled";
 import { useDispatch, useSelector } from "react-redux";
-import { List, StyledLink } from "./styled";
 import {
-    selectStatus,
+    fetchMoviesLoading,
+    fetchMoviesSuccess,
+    selectCurrentPage,
+    selectPopularMoviesStatus,
     selectTotalPages,
-    selectPopularMovies,
-    selectTotalResults,
-    setQuery,
-    selectPage,
-    goToPage,
+    setCurrentPage,
+    setTotalPages
 } from "./popularMoviesSlice";
-import { Error }  from "../../../common/Error";
-import { toMovie } from "../../../core/App/routes";
+import { useState } from "react";
+import { API_KEY, ApiPopularMovies } from "../../../core/App/apiCodes";
 import { Loading } from "../../../common/Loading";
-import { NoResult } from "../../../common/NoResult";
-import { useQueryParameter } from "../../../queryParameters";
-import { pageQueryParamName, searchQueryParamName } from "../../../queryParamName";
+import Error from "../../../common/Error";
 
-export const MovieList = () => {
+const MoviesList = () => {
+    const [movies, setMovies] = useState([]);
     const dispatch = useDispatch();
-  
-    const status = useSelector(selectStatus);
-    const popularMovies = useSelector(selectPopularMovies);
-    const pageNumber = useSelector(selectPage);
+    const status = useSelector(selectPopularMoviesStatus);
+    const currentPage = useSelector(selectCurrentPage);
     const totalPages = useSelector(selectTotalPages);
-    const totalResults = useSelector(selectTotalResults);
-    const query = useQueryParameter(searchQueryParamName);
-    const page = useQueryParameter(pageQueryParamName);
-  
+
     useEffect(() => {
-      dispatch(setQuery(query ? { query: query } : { query: "" }));
-      dispatch(goToPage(page ? { page: page } : { page: 1 }));
-    }, [query, page, dispatch]);
-  
-    return status === "loading" ? (
-      <Loading />
-    ) : status === "error" ? (
-      <Error />
-    ) : (
-      <>
-        {pageNumber > totalPages ? (
-          <Error />
-        ) : totalResults === 0 ? (
-          <NoResult query={query} />
-        ) : (
-          <Container>
-            <MainHeader
-              title={
-                query
-                  ? `Search results for “${query}” (${totalResults})`
-                  : `Popular Movies`
-              }
+        const fetchMovies = async () => {
+
+            try {
+                dispatch(fetchMoviesLoading(true))
+                const response = await fetch(
+                    `${ApiPopularMovies}?api_key=${API_KEY}&language=en-US&page=${currentPage}`
+                );
+                const data = await response.json();
+                setMovies(data.results.slice(0, 8));
+                dispatch(fetchMoviesSuccess(setMovies));
+                dispatch(setTotalPages(Math.min(data.total_pages, 500)));
+            }
+            catch (error) {
+                console.error(error)
+            }
+            finally {
+                dispatch(fetchMoviesLoading(false));
+            }
+        }
+        fetchMovies();
+    }, [dispatch, currentPage,]);
+
+    const renderMovies = () => (
+        movies.map(movie => (
+            <MovieTile
+                key={movie.id}
+                movie={movie}
             />
-            <List>
-              {popularMovies.map((movie) => (
-                <div key={movie.id}>
-                  <StyledLink to={toMovie({ movieId: movie.id })}>
-                    <MovieTile
-                      movie={movie}
-                      id={movie.id}
-                      genres={movie.genre_ids}
-                    />
-                  </StyledLink>
-                </div>
-              ))}
-            </List>
-            <Pagination pageNumber={pageNumber} totalPages={totalPages} />
-          </Container>
-        )}
-        ;
-      </>
+        )));
+
+    const handleFirstPage = () => {
+        dispatch(setCurrentPage(1));
+    };
+
+    const handlePrevPage = () => {
+        dispatch(setCurrentPage(currentPage - 1));
+    };
+
+    const handleNextPage = () => {
+        dispatch(setCurrentPage(currentPage + 1));
+    };
+
+    const handleLastPage = () => {
+        dispatch(setCurrentPage(totalPages));
+    };
+
+    return (
+        <>
+            {status === "loading" ?
+                <Loading />
+                : status === "success" ?
+                    <Container>
+                        <Header>Popular movies</Header>
+                        <Wrapper>
+                            {renderMovies()}
+                        </Wrapper>
+                        <Pagination
+                            currentPage={currentPage}
+                            totalPages={totalPages}
+                            onFirstPage={handleFirstPage}
+                            onPrevPage={handlePrevPage}
+                            onNextPage={handleNextPage}
+                            onLastPage={handleLastPage}
+                        />
+                    </Container> :
+                    <Error />}
+        </>
     );
-  };
+};
+
+export default MoviesList;
