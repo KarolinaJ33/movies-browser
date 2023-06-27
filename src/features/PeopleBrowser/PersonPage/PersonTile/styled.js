@@ -23,7 +23,8 @@ export const PersonTileWrapper = styled.div`
 `;
 
 export const PersonPhoto = styled.img`
-    max-width: 312px;
+    max-width: 400px;
+    height: 564px;
     border-radius: 5px;
     grid-row: span 2 / auto;
 
@@ -101,7 +102,7 @@ export const Biography = styled.article`
   font-size: 20px;
   line-height: 1.6;
   color: ${({ theme }) => theme.colors.woodsmoke};
-  margin: 0;
+  margin-top: 24px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     font-size: 17px;
