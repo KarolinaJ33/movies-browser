@@ -6,7 +6,7 @@ const popularPeopleSlice = createSlice({
     people: [],
     status: "loading",
     query: "",
-    page: 1,
+    currentPage: 1,
     totalPages: 0,
     totalResults: 0,
   },
@@ -32,7 +32,10 @@ const popularPeopleSlice = createSlice({
     setQuery: (state, { payload }) => {
       state.status = "loading";
       state.query = payload.query;
-
+    },
+    setCurrentPage: (state, action) => {
+      state.status = "loading";
+      state.currentPage = action.payload;
     },
   },
 });
@@ -43,6 +46,7 @@ export const {
   fetchPopularPeopleError,
   goToPage,
   setQuery,
+  setCurrentPage,
 } = popularPeopleSlice.actions;
 
 export const selectStatePopularPeople = (state) => state.popularPeople;
@@ -54,5 +58,6 @@ export const selectPeoplePage = (state) => selectStatePopularPeople(state).page;
 export const selectTotalPages = (state) => selectStatePopularPeople(state).totalPages;
 export const selectTotalResults = (state) => selectStatePopularPeople(state).totalResults;
 export const selectQuery = (state) => selectStatePopularPeople(state).query;
+export const selectCurrentPage = (state) => state.popularPeople.currentPage;
 
 export default popularPeopleSlice.reducer;
