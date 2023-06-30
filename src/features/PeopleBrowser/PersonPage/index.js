@@ -11,7 +11,7 @@ import {
   selectStatus,
 } from "./PersonSlice";
 import { PersonTile } from "./PersonTile";
-import { MovieTile } from "../../../common/MovieTile";
+import MovieTile from "../../MoviesBrowser/MovieList/MovieTile";
 import { MainHeader } from "../../../common/MainHeader";
 import { Container } from "../../../common/Container/styled";
 import { Loading } from "../../../common/Loading";

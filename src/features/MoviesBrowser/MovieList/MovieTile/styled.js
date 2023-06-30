@@ -3,18 +3,18 @@ import { ReactComponent as noPoster } from "../../../../common/images/no-poster.
 import { ReactComponent as StarIcon } from "../../../../common/images/star.svg";
 
 export const PosterWrapper = styled.div`
-    height: auto;
-    border-radius: 5px;
-    aspect-ratio: 2 / 3;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    border-radius: 5px;
-    flex-basis: auto;
-    background-image: url(${noPoster});
-    background-size: 100%;
-    background-color: ${({ theme }) => theme.colors.silver};
-    color: ${({ theme }) => theme.colors.white};
+  height: auto;
+  border-radius: 5px;
+  aspect-ratio: 2 / 3;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-radius: 5px;
+  flex-basis: auto;
+  background-image: url(${noPoster});
+  background-size: 100%;
+  background-color: ${({ theme }) => theme.colors.silver};
+  color: ${({ theme }) => theme.colors.white};
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         height: fit-content;
@@ -48,6 +48,7 @@ export const Content = styled.div`
         margin: 0 0 0 8px;
         gap: 4px;   
     }
+
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         margin: 0 0 0 8px;
         gap: 4px;

@@ -17,6 +17,8 @@ import {
     selectTotalResults,
     goToPage,
     setQuery,
+    selectCurrentPage,
+    setCurrentPage
   } from "./popularPeopleSlice";
   import { useQueryParameter } from "../../../queryParameters";
   import { pageQueryParamName, searchQueryParamName } from "../../../queryParamName";
@@ -28,19 +30,36 @@ import {
     const totalResults = useSelector(selectTotalResults);
     const popularPeople = useSelector(selectPopularPeople);
     const status = useSelector(selectPopularPeopleStatus);
+    const currentPage = useSelector(selectCurrentPage);
 
     const page = useQueryParameter(pageQueryParamName);
     const query = useQueryParameter(searchQueryParamName);
-
 
     useEffect(() => {
       dispatch(setQuery(query
         ? { query: query }
         : { query: "" }));
       dispatch(goToPage(page
-        ? { page: page }
-        : { page: 1 }));
-    }, [query, page, dispatch]);
+        ? { currentPage: currentPage }
+        : { currentPage: 1 }));
+    }, [query, page, currentPage, dispatch]);
+
+
+    const handleFirstPage = () => {
+      dispatch(setCurrentPage(1));
+  };
+
+  const handlePrevPage = () => {
+      dispatch(setCurrentPage(currentPage - 1));
+  };
+
+  const handleNextPage = () => {
+      dispatch(setCurrentPage(currentPage + 1));
+  };
+
+  const handleLastPage = () => {
+      dispatch(setCurrentPage(totalPages));
+  };
 
     return (
       status === "loading" ?
@@ -72,7 +91,14 @@ import {
               </ListItem>
             ))}
           </List>
-          <Pagination pageNumber={pageNumber} totalPages={totalPages} />
+          <Pagination pageNumber={pageNumber} 
+                      totalPages={totalPages} 
+                      currentPage={currentPage}
+                      onFirstPage={handleFirstPage}
+                      onPrevPage={handlePrevPage}
+                      onNextPage={handleNextPage}
+                      onLastPage={handleLastPage}
+            />
         </Container>
         };
       </>
