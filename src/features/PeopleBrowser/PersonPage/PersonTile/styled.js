@@ -8,7 +8,6 @@ export const PersonTileWrapper = styled.div`
     grid-template-columns: auto 1fr;
     gap: 0px 40px;
     box-shadow: 0px 4px 12px ${({ theme }) => theme.colors.lightHeather};
-    grid-template-rows: auto 1fr;
 
     @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     gap: 0 28px;

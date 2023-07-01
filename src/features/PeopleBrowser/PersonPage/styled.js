@@ -17,7 +17,7 @@ export const List = styled.ul`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     justify-items: center;
     grid-gap: 16px;
     margin: 12px auto 0;
