@@ -6,8 +6,6 @@ export const Container = styled.div`
     padding: 16px;
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-        width: 100%;
-        max-width: auto;
         margin: 24px auto;
     }
 `;

@@ -33,6 +33,7 @@ export const Image = styled.img`
         height: fit-content;
         width: 160px;
     }
+
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
         width: 120px; 
     }
@@ -46,7 +47,9 @@ export const Content = styled.div`
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
         margin: 0 0 0 8px;
-        gap: 4px;   
+        gap: 4px;
+        display: flex;
+        justify-content: normal;
     }
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
@@ -90,10 +93,12 @@ export const SubTitle = styled.div`
     @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
         font-size: 14px;
     }
+
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         font-size: 14px;
         margin: 8px 0 0 0;
     }
+
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
     }
 `;
@@ -128,6 +133,7 @@ export const RateBig = styled.div`
         font-size: 13px;
         padding: 0 7px;
     }
+
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
         font-size: 12px;
         padding: 0 4px;
@@ -153,7 +159,6 @@ export const Vouters = styled.div`
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         font-size: 13px;
-        line-height: 1.3;
     }
 `;
 
@@ -177,7 +182,6 @@ export const Tile = styled.div`
     }
 
     &:hover {
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         transform: scale(1.05);
     }
 `;

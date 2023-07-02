@@ -1,4 +1,4 @@
-import { GenreName, Tag, Tags } from "./styled";
+import { Tag, Tags } from "./styled";
 
 export const Genres = [
   { "id": 28, "name": "Action" },
