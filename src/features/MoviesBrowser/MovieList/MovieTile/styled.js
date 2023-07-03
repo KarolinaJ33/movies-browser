@@ -147,7 +147,7 @@ export const Votes = styled.div`
   line-height: 1.5;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
-    font-size: 12px;
+    font-size: 13px;
     line-height: 1.3;
   }
 `;
