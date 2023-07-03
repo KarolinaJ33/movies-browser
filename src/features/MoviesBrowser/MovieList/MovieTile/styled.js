@@ -3,23 +3,22 @@ import { ReactComponent as noPoster } from "../../../../common/images/no-poster.
 import { ReactComponent as StarIcon } from "../../../../common/images/star.svg";
 
 export const PosterWrapper = styled.div`
-    height: auto;
-    border-radius: 5px;
-    aspect-ratio: 2 / 3;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    border-radius: 5px;
-    flex-basis: auto;
-    background-image: url(${noPoster});
-    background-size: 100%;
-    background-color: ${({ theme }) => theme.colors.silver};
-    color: ${({ theme }) => theme.colors.white};
+  height: auto;
+  border-radius: 5px;
+  aspect-ratio: 2 / 3;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-radius: 5px;
+  flex-basis: auto;
+  background-image: url(${noPoster});
+  background-size: 100%;
+  background-color: ${({ theme }) => theme.colors.silver};
+  color: ${({ theme }) => theme.colors.white};
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         height: fit-content;
     }
-    
 `;
 
 export const Image = styled.img`
@@ -27,13 +26,14 @@ export const Image = styled.img`
     height: auto;
     border-radius: 5px;
     aspect-ratio: 2/3;
-
+    
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         display: grid;
         grid-template-columns: auto 1fr;
         height: fit-content;
         width: 160px;
     }
+
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
         width: 120px; 
     }
@@ -42,20 +42,19 @@ export const Image = styled.img`
 export const Content = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     justify-content: space-between;
-    gap: 8px;
+    height: 100%;
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
         margin: 0 0 0 8px;
-        gap: 4px;   
+        gap: 4px;
+        display: flex;
+        justify-content: normal;
     }
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-      margin: 0 0 0 8px;
+        margin: 0 0 0 8px;
         gap: 4px;
-        width: 124px;
-        height: 180px;
     }
 `;
 
@@ -64,12 +63,12 @@ export const Title = styled.h2`
     font-size: 22px;
     line-height: 1.3;
     color: ${({ theme }) => theme.colors.woodSmoke};
-    margin: 16px 0 0;
+    margin: 16px 0px 8px;
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
         margin: 0;
     }
-
+    
     @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
         font-size: 18px;
     }
@@ -79,8 +78,7 @@ export const Title = styled.h2`
         font-size: 18px;
         line-height: 1.1;
         grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-       
+        gap: 16px;    
     }
 `;
 
@@ -89,53 +87,19 @@ export const SubTitle = styled.div`
     margin: 0;
     line-height: 1.5;
     color: ${({ theme }) => theme.colors.darkerGrey};
+    display: flex;
+    margin-bottom: 8px;
 
     @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
         font-size: 14px;
     }
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-        font-size: 12px;
-        margin: 2px 0 0 0;
-    }
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
-        margin: 0 0 0 8px;
-    }
-`;
-
-export const Genres = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 8px 0 0 0;
-    padding: 0;
-    align-items: center;
-
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-        margin: 2px 0 0 0;
+        font-size: 14px;
+        margin: 8px 0 0 0;
     }
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
-        margin: 0 0 0 8px;
-    }
-`;
-
-export const Genre = styled.div`
-    background-color: ${({ theme }) => theme.colors.mystic};
-    padding: 8px 16px;
-    border-radius: 5px;
-    line-height: 1.4;
-    align-items: center;
-    display: flex;
-    font-size: 13px;
-
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-        padding: 4px 12px;
-        font-size: 12px;
-    }
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
-        font-size: 10px;
-        padding: 4px 8px;
     }
 `;
 
@@ -148,23 +112,15 @@ export const Star = styled(StarIcon)`
         width: 20px;
     }
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
-        width: 16px;
-    }
 `;
 
 export const Rate = styled.div`
     display: flex;
     align-items: center;
-    margin: 8px 0 0 0;
-    
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         margin: 8px 0 0 0;
-    }
-
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
-        margin: 6px 0 0 8px;
+        width: 124px;
     }
 `;
 
@@ -192,7 +148,7 @@ export const Votes = styled.div`
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
         font-size: 10px;
         line-height: 1.3;
-    }
+    } 
 `;
 
 export const Vouters = styled.div`
@@ -203,7 +159,6 @@ export const Vouters = styled.div`
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         font-size: 13px;
-        line-height: 1.3;
     }
 `;
 
@@ -220,19 +175,15 @@ export const Tile = styled.div`
     box-shadow: 0px 4px 12px ${({ theme }) => theme.colors.lightHeather};
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {  
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: auto 1fr;
         gap: 0 16px;
         padding: 16px;
-        width: 350px;
-    }
-
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
-        grid-template-columns: auto 1fr;
-        width: 300px;
+        width: 100%;
     }
 
     &:hover {
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
         transform: scale(1.05);
     }
 `;
+
+export const GridItem = styled.div``;

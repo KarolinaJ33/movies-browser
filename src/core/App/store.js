@@ -3,15 +3,15 @@ import { configureStore } from "@reduxjs/toolkit";
 import rootSaga from "./rootSaga";
 import popularMoviesSlice from "../../features/MoviesBrowser/MovieList/popularMoviesSlice";
 import popularPeopleReducer from "../../features/PeopleBrowser/PeopleList/popularPeopleSlice";
-import genresReducer from "../../features/MoviesBrowser/Genres/genresSlice";
 import personDetailsReducer from "../../features/PeopleBrowser/PersonPage/PersonSlice";
+import genresSlice from "../../features/MoviesBrowser/Genres/genresSlice";
 
 const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
   reducer: {
     popularMovies: popularMoviesSlice,
-    genres: genresReducer,
+    genres: genresSlice,
     popularPeople: popularPeopleReducer,
     personDetails: personDetailsReducer,
   },

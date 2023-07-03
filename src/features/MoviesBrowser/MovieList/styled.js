@@ -6,7 +6,6 @@ export const Container = styled.div`
     padding: 16px;
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-        max-width: 320px;
         margin: 24px auto;
     }
 `;
@@ -31,6 +30,7 @@ export const Wrapper = styled.div`
     grid-template-rows: 1fr;
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   }
 `;
