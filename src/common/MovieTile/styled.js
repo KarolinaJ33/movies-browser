@@ -218,7 +218,7 @@ export const Votes = styled.div`
     line-height: 1.5;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.3;
   }
 `;
@@ -252,6 +252,7 @@ export const MovieDescription = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  
   @media (max-width: ${({ theme }) => theme.breakpoint.large}px) {
     height: auto;
     justify-content: flex-start;

@@ -104,9 +104,10 @@ export const SubTitle = styled.div`
 `;
 
 export const Star = styled(StarIcon)`
-    width: 24px;
-    display: flex;
-    align-items: flex-start;
+  width: 24px;
+  display: flex;
+  height: auto;
+  align-items: flex-start;
 
     @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
         width: 20px;
@@ -125,41 +126,42 @@ export const Rate = styled.div`
 `;
 
 export const RateBig = styled.div`
-    font-weight: 600;
-    font-size: 16px;
-    padding: 0 12px;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 0 12px;
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-        font-size: 13px;
-        padding: 0 7px;
-    }
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    font-size: 12px;
+    padding: 0 7px;
+  }
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
-        font-size: 12px;
-        padding: 0 4px;
-    }
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
+    font-size: 12px;
+    padding: 0 4px;
+  }
 `;
 
 export const Votes = styled.div`
-    font-size: 16px;
-    color: ${({ theme }) => theme.colors.darkerGrey};
-    line-height: 1.5;
+  font-size: 16px;
+  color: ${({ theme }) => theme.colors.darkerGrey};
+  line-height: 1.5;
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
-        font-size: 10px;
-        line-height: 1.3;
-    } 
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
+    font-size: 12px;
+    line-height: 1.3;
+  }
 `;
 
 export const Vouters = styled.div`
-    font-size: 14px;
-    color: ${({ theme }) => theme.colors.darkerGrey};
-    font-weight: 400;
-    display: flex;
-
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-        font-size: 13px;
-    }
+  font-size: 16px;
+  color: ${({ theme }) => theme.colors.darkerGrey};
+  font-weight: 400;
+  display: flex;
+  
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    font-size: 13px;
+    line-height: 1.3;
+  }
 `;
 
 export const Tile = styled.div`
