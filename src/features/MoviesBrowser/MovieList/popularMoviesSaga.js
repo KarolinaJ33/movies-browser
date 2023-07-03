@@ -12,6 +12,6 @@ function* fetchMoviesHandler() {
     }
 };
 
-export function* PopularMoviesSaga() {
+export function* popularMoviesSaga() {
     yield takeLatest(fetchMoviesLoading.type, fetchMoviesHandler)
 };
