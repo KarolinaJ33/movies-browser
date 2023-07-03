@@ -4,15 +4,15 @@ import {
     Content,
     Title,
     SubTitle,
-    Genres,
-    Genre,
     Star,
     Rate,
     RateBig,
     Vouters,
-    Tile
+    Tile,
+    GridItem
 } from "./styled";
 import noPoster from "../../../../common/images/noPoster.svg";
+import { GenresDetails } from "../../Genres";
 
 const MovieTile = ({ movie }) => {
     
@@ -32,13 +32,11 @@ const MovieTile = ({ movie }) => {
             )}
             </PosterWrapper>
             <Content>
+                <GridItem>
                 <Title>{movie.title}</Title>
                 <SubTitle>{new Date(movie.release_date).getFullYear()}</SubTitle>
-                <Genres>
-                    <Genre>Action</Genre>
-                    <Genre>Drama</Genre>
-                    <Genre>Adventure</Genre>
-                </Genres>
+                <GenresDetails genres={movie.genre_ids}></GenresDetails>
+                </GridItem>
                 <Rate>
                     <Star />
                     <RateBig>{movie.vote_average}</RateBig>
