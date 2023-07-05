@@ -45,7 +45,7 @@ import {
     }, [query, page, currentPage, dispatch]);
 
 
-    const handleFirstPage = () => {
+  const handleFirstPage = () => {
       dispatch(setCurrentPage(1));
   };
 

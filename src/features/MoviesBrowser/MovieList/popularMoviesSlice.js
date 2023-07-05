@@ -6,7 +6,7 @@ const popularMoviesSlice = createSlice({
     currentPage: 1,
     movies: [],
     genres: [],
-    status: "initial",
+    status: "loading",
     totalPages: 0,
   },
   reducers: {
