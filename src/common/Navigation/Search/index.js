@@ -1,30 +1,40 @@
-import { useLocation } from "react-router-dom/cjs/react-router-dom";
-import { SearchIcon, StyledForm, StyledInput } from "./styled"
+import { useLocation } from "react-router-dom";
+import { useQueryParameter, useReplaceQueryParameter } from "../../../queryParameters";
+import { pageQueryParamName, searchQueryParamName } from "../../../queryParamName";
+import { SearchIcon, StyledForm, StyledInput, Wrapper } from "./styled";
 
-const Search = () => {
+export const Search = () => {
+    const replaceQueryParameter = useReplaceQueryParameter();
+    const query = useQueryParameter(searchQueryParamName);
     const location = useLocation();
-    const path = location.pathname;
 
-    const changeText = () => {
-        let text;
-        const moviesText = "Search for movies...";
-        const peopleText = "Search for people..."
-
-        if (path === "/movies") {
-            text = moviesText;
-        }
-        else {
-            text = peopleText;
-        }
-        return text;
-    };
-
-    return (
-        <StyledForm>
+    const onInputChange = ({ target }) => {
+        replaceQueryParameter([
+          {
+            key: searchQueryParamName,
+            value: target.value.trim() !== "" ? target.value : undefined,
+          },
+          {
+            key: pageQueryParamName,
+            value: 1,
+          },
+        ]);
+      };
+    
+      return (
+        <Wrapper>
+          <StyledForm>
             <SearchIcon />
-            <StyledInput type="text" placeholder={changeText()}></StyledInput>
-        </StyledForm>
-
-    )
-};
-export default Search;
+          <StyledInput
+            onChange={onInputChange}
+            value={query || ""}
+            placeholder={`${
+              location.pathname.includes("movie")
+                ? "Search for movies..."
+                : "Search for people..."
+            }`}
+          />
+          </StyledForm>
+          </Wrapper>
+      );
+    };

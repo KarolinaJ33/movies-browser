@@ -17,9 +17,9 @@ function* fetchPopularPeopleHandler() {
     const query = yield select(selectQuery);
     let data;
     if (query !== "") {
-      data = yield call(searchPeople, { page: page, query: query });
+      data = yield call(searchPeople, { page: currentPage, query: query });
     } else {
-      data = yield call(getPopularPeople, { currentPage: currentPage });
+      data = yield call(getPopularPeople, { page: page });
     }
     yield put(fetchPopularPeopleSuccess({ data }));
   } catch (error) {

@@ -1,6 +1,13 @@
 import { styled } from "styled-components";
 import { ReactComponent as Icon } from "../../images/Search.svg";
 
+export const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  outline-offset: 10px;
+  cursor: pointer;
+`;
+
 export const StyledForm = styled.form`
     width: 432px;
     height: 48px;
