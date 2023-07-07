@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-import { ReactComponent as Star } from "../../../../common/images/star.svg";
+import { ReactComponent as Star } from "../../../../../common/images/star.svg";
 
 export const BackdropWrapper = styled.div`
-    background-color: ${({ theme }) => theme.colors.mystic};
+    background-color: ${({ theme }) => theme.colors.black};
 `;
 export const BackdropContainer = styled.div`
     position: relative;
@@ -57,6 +57,11 @@ export const Pleksa = styled.span`
         );
 `;
 
+export const BackdropImage = styled.img`
+    width: 100%;
+    object-fit: cover;
+`;
+
 export const InfoContainer = styled.div`
     padding-left: 25px;
     margin-bottom: 10px;
@@ -76,6 +81,14 @@ export const LongTitle = styled.header`
     font-size: 64px;
     margin-bottom: 5px;
     margin-top: 0;
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.mediumPage}px) {
+        font-size: 48px;
+  }
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+        font-size: 24px;
+  }
 `;
 
 export const Rating = styled.div`
@@ -95,6 +108,15 @@ export const Rating = styled.div`
 export const StarIcon = styled(Star)`
     width: 40px;
     height: 38px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.mediumPage}px) {
+        width: 32px;
+        height: 31px;
+  }
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+        width: 16px;
+        height: 16px;
+  }
 `;
 
 export const RateBig = styled.span`
@@ -102,10 +124,23 @@ export const RateBig = styled.span`
     font-size: 30px;
     line-height: 100%;
     margin: 3px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.mediumPage}px) {
+    font-size: 22px;
+    line-height: 26px;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    font-size: 13px;
+    line-height: 17px;
+  }
 `;
 
 export const RateSmall = styled.span`
     font-size: 16px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+        font-size: 10px;
+    }
 `;
 
 export const Votes = styled.span`
@@ -113,4 +148,8 @@ export const Votes = styled.span`
     grid-row: 2;
     grid-column: 1 / 5;
     font-size: 16px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+        font-size: 10px;
+  }
 `;

@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { Link } from "react-router-dom/cjs/react-router-dom";
 
 export const Container = styled.div`
     max-width: 1368px;
@@ -33,4 +34,9 @@ export const Wrapper = styled.div`
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   }
+`;
+
+export const StyledLink = styled(Link)`
+    text-decoration: none;
+    color: ${({ theme }) => theme.colors.black};
 `;
