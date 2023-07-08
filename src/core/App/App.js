@@ -11,7 +11,7 @@ export const App = () => (
   <HashRouter>
     <Navigation />
     <Switch>
-      <Route path={toMovie()}>
+      <Route path={toMovie({ movieId: ":movieId" })}>
         <MovieDetails />
       </Route>
       <Route path={toMovies()}>
@@ -29,4 +29,3 @@ export const App = () => (
     </Switch>
   </HashRouter>
 );
-

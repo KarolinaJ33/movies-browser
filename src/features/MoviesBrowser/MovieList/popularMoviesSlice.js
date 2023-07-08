@@ -18,7 +18,6 @@ const popularMoviesSlice = createSlice({
       state.status = "success";
       state.movies = payload.results;
       state.genres = payload.genres;
-      state.status = "success";
     },
     setCurrentPage: (state, action) => {
       state.status = "loading";

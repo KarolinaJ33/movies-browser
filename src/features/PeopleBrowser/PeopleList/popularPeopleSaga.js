@@ -1,4 +1,4 @@
-import { call, put, takeLatest, select } from "redux-saga/effects";
+import { call, put, takeLatest, select, delay } from "redux-saga/effects";
 import { getPopularPeople } from "./getPopularPeople";
 import {
   goToPage,
@@ -15,6 +15,7 @@ function* fetchPopularPeopleHandler() {
     const page = yield select(selectPeoplePage);
     const currentPage = yield select(selectCurrentPage);
     const query = yield select(selectQuery);
+    yield delay(1000)
     let data;
     if (query !== "") {
       data = yield call(searchPeople, { page: currentPage, query: query });

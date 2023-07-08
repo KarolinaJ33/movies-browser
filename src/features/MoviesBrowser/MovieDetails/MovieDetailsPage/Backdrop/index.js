@@ -1,4 +1,4 @@
-import { imgBackdrop } from "../../../../core/App/apiCodes";
+import { imgBackdrop } from "../../../../../core/App/apiCodes";
 import {
     BackdropContainer,
     Pleksa,
@@ -13,21 +13,21 @@ import {
     LongTitle,
 } from "./styled";
 
-const Backdrop = ({ title, backdrop_path, rate, votes }) => {
+const Backdrop = ({ backdrop_path, original_title, vote_average, vote_count }) => {
     return (
         <>
             <BackdropWrapper >
                 <BackdropContainer>
                     <Pleksa />
                     <BackdropImage src={`${imgBackdrop}${backdrop_path}`}
-                        alt={`poster of ${title}`} />
+                        alt={`poster of ${original_title}`} />
                     <InfoContainer>
-                        <LongTitle>{title}</LongTitle>
+                        <LongTitle>{original_title}</LongTitle>
                         <Rating>
                             <StarIcon />
-                            <RateBig>{rate.toFixed(1)}</RateBig>
+                            <RateBig>{vote_average.toFixed(1)}</RateBig>
                             <RateSmall>/ 10</RateSmall>
-                            <Votes>{votes} votes</Votes>
+                            <Votes>{vote_count} votes</Votes>
                         </Rating>
                     </InfoContainer>
                 </BackdropContainer>
