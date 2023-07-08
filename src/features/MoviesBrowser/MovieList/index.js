@@ -17,6 +17,8 @@ import { API_KEY, ApiPopularMovies } from "../../../core/App/apiCodes";
 import { Loading } from "../../../common/Loading";
 import Error from "../../../common/Error";
 import { toMovie } from "../../../core/App/routes";
+import { searchQueryParamName } from "../../../queryParamName";
+import { useQueryParameter } from "../../../queryParameters";
 
 const MoviesList = () => {
     const [movies, setMovies] = useState([]);
@@ -24,6 +26,8 @@ const MoviesList = () => {
     const status = useSelector(selectPopularMoviesStatus);
     const currentPage = useSelector(selectCurrentPage);
     const totalPages = useSelector(selectTotalPages);
+    const query = useQueryParameter(searchQueryParamName);
+
 
     useEffect(() => {
         const fetchMovies = async () => {
@@ -70,7 +74,12 @@ const MoviesList = () => {
                 <Loading />
                 : status === "success" ?
                     <Container>
-                        <Header>Popular movies</Header>
+                        <Header title={
+              query
+                ? `Search results for “${query}” (${totalPages})`
+                : `Popular Movies`
+            }
+          />
                         <Wrapper>
                         {movies.map(movie => (
                             <div key={movie.id}>

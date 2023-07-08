@@ -1,10 +1,16 @@
 import { API_KEY, ApiPopularMovies } from "../../../core/App/apiCodes";
 
-export const getPopularMovies = async () => {
-  const response = await fetch(
-    `${ApiPopularMovies}?api_key=${API_KEY}&language=en-US&page=1`
-  );
-
-  const popularMovies = await response.json();
-  return popularMovies;
+export const getPopularMovies = async (page) => {
+  try {
+    const response = await fetch(
+      `${ApiPopularMovies}?api_key=${API_KEY}&language=en-US&page=${page}`
+    );
+    if (!response.ok) {
+      throw new Error("Not found movies.");
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
 };

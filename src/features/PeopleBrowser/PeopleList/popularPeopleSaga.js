@@ -18,9 +18,9 @@ function* fetchPopularPeopleHandler() {
     yield delay(1000)
     let data;
     if (query !== "") {
-      data = yield call(searchPeople, { currentPage: currentPage, query: query },);
+      data = yield call(searchPeople, { page: currentPage, query: query });
     } else {
-      data = yield call(getPopularPeople, { page: page },);
+      data = yield call(getPopularPeople, { page: page });
     }
     yield put(fetchPopularPeopleSuccess({ data }));
   } catch (error) {

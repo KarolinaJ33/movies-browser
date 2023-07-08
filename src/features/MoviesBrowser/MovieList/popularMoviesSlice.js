@@ -7,6 +7,7 @@ const popularMoviesSlice = createSlice({
     movies: [],
     genres: [],
     status: "loading",
+    query: "",
     totalPages: 0,
   },
   reducers: {
@@ -16,6 +17,7 @@ const popularMoviesSlice = createSlice({
     fetchMoviesSuccess: (state, { payload }) => {
       state.status = "success";
       state.movies = payload.results;
+      state.genres = payload.genres;
     },
     setCurrentPage: (state, action) => {
       state.status = "loading";
@@ -27,6 +29,14 @@ const popularMoviesSlice = createSlice({
     fetchMoviesError: (state) => {
       state.status = "error";
     },
+    setQuery: (state, { payload }) => {
+      state.query = payload.query;
+      state.status = "loading";
+    },
+    goToPage: (state, { payload: movies }) => {
+      state.status = "loading";
+      state.page = movies.page;
+    },
   }
 });
 
@@ -36,11 +46,15 @@ export const {
   setCurrentPage,
   setTotalPages,
   fetchMoviesError,
+  setQuery, 
+  goToPage,
 } = popularMoviesSlice.actions
 
 export const selectPopularMoviesState = (state) => state.popularMovies;
 export const selectPopularMoviesStatus = (state) => selectPopularMoviesState(state).status;
 export const selectCurrentPage = (state) => state.popularMovies.currentPage;
 export const selectTotalPages = (state) => state.popularMovies.totalPages;
+export const selectQuery = (state) => selectPopularMoviesState(state).query;
+export const selectPage = (state) => selectPopularMoviesState(state).page;
 
 export default popularMoviesSlice.reducer;
