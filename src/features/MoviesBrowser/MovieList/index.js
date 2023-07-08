@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Pagination from "../../../common/Pagination";
 import MovieTile from "./MovieTile";
-import { Container, Header, Wrapper } from "./styled";
+import { Container, Header, StyledLink, Wrapper } from "./styled";
 import { useDispatch, useSelector } from "react-redux";
 import {
     fetchMoviesLoading,
@@ -16,6 +16,7 @@ import { useState } from "react";
 import { API_KEY, ApiPopularMovies } from "../../../core/App/apiCodes";
 import { Loading } from "../../../common/Loading";
 import Error from "../../../common/Error";
+import { toMovie } from "../../../core/App/routes";
 
 const MoviesList = () => {
     const [movies, setMovies] = useState([]);
@@ -47,14 +48,6 @@ const MoviesList = () => {
         fetchMovies();
     }, [dispatch, currentPage,]);
 
-    const renderMovies = () => (
-        movies.map(movie => (
-            <MovieTile
-                key={movie.id}
-                movie={movie}
-            />
-        )));
-
     const handleFirstPage = () => {
         dispatch(setCurrentPage(1));
     };
@@ -79,7 +72,16 @@ const MoviesList = () => {
                     <Container>
                         <Header>Popular movies</Header>
                         <Wrapper>
-                            {renderMovies()}
+                        {movies.map(movie => (
+                            <div key={movie.id}>
+                                <StyledLink to={toMovie({ movieId: movie.id })}>
+                                    <MovieTile
+                                        id={movie.id}
+                                        movie={movie}
+                                    />
+                                </StyledLink>
+                            </div>
+                            ))}
                         </Wrapper>
                         <Pagination
                             currentPage={currentPage}
