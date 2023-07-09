@@ -4,7 +4,6 @@ import {
   goToPage,
   fetchPopularPeopleError,
   fetchPopularPeopleSuccess,
-  selectPeoplePage,
   selectQuery,
   selectCurrentPage,
 } from "./popularPeopleSlice";
@@ -12,7 +11,6 @@ import { searchPeople } from "../../../common/Navigation/Search/getSearch";
 
 function* fetchPopularPeopleHandler() {
   try {
-    const page = yield select(selectPeoplePage);
     const currentPage = yield select(selectCurrentPage);
     const query = yield select(selectQuery);
     yield delay(1000)
@@ -20,7 +18,7 @@ function* fetchPopularPeopleHandler() {
     if (query !== "") {
       data = yield call(searchPeople, { page: currentPage, query: query });
     } else {
-      data = yield call(getPopularPeople, { page: page });
+      data = yield call(getPopularPeople, { currentPage: currentPage });
     }
     yield put(fetchPopularPeopleSuccess({ data }));
   } catch (error) {

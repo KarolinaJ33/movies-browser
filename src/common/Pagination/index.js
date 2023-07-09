@@ -1,3 +1,4 @@
+import { useMediaQuery } from "react-responsive";
 import {
     Button,
     ButtonText,
@@ -9,12 +10,19 @@ import {
 } from "./styled";
 
 const Pagination = ({ onNextPage, onPrevPage, currentPage, totalPages, onFirstPage, onLastPage }) => {
-
+    const isMobile = useMediaQuery({ maxWidth: 767 });
+    
     return (
         <Container>
             <Button onClick={onFirstPage} disabled={currentPage === 1}>
+            {isMobile ? (
+              <>
                 <LeftArrow />
                 <LeftArrow />
+                </>
+            ) : (
+                <LeftArrow />
+            )}
                 <ButtonText>First</ButtonText>
             </Button>
             <Button onClick={onPrevPage} disabled={currentPage === 1}>
@@ -30,8 +38,14 @@ const Pagination = ({ onNextPage, onPrevPage, currentPage, totalPages, onFirstPa
             </Button>
             <Button onClick={onLastPage} disabled={currentPage === totalPages}>
                 <ButtonText>Last</ButtonText>
+            {isMobile ? (
+              <>
                 <RightArrow />
                 <RightArrow />
+              </>
+            ) : (
+                <RightArrow />
+            )}
             </Button>
         </Container>
     )

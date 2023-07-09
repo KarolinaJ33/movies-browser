@@ -39,7 +39,7 @@ const MovieTile = ({ movie }) => {
                 </GridItem>
                 <Rate>
                     <Star />
-                    <RateBig>{movie.vote_average}</RateBig>
+                    <RateBig>{movie.vote_average.toFixed(1)}</RateBig>
                     <Vouters>{movie.vote_count} votes</Vouters>
                 </Rate>
             </Content>
