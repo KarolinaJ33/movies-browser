@@ -5,6 +5,7 @@ export const PersonTileWrapper = styled.div`
     margin: 56px 0px;
     padding: 40px;
     display: grid;
+    grid-template-rows: auto 1fr;
     grid-template-columns: auto 1fr;
     gap: 0px 40px;
     box-shadow: 0px 4px 12px ${({ theme }) => theme.colors.lightHeather};
