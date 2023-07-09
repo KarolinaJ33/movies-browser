@@ -4,6 +4,7 @@ import { ReactComponent as Star } from "../../../../../common/images/star.svg";
 
 export const BackdropWrapper = styled.div`
     background-color: ${({ theme }) => theme.colors.black};
+    transition: 1s;
 `;
 export const BackdropContainer = styled.div`
     position: relative;
