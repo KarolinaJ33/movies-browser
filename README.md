@@ -2,7 +2,7 @@
 ## Demo 
 [See Movies Browser](https://karolinaj33.github.io/movies-browser/)
 
-![Movies Browser Gif](/animation.gif)
+![Movies Browser Gif](/Animation.gif)
 
 ## Contributors:
 This is a group project co-created with
