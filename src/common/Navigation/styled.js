@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 import { ReactComponent as Icon } from "../images/Video.svg";
 import { NavLink } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 export const StyledNavigation = styled.nav`
   display: flex;
@@ -57,11 +58,17 @@ export const StyledHeader = styled.div`
   line-height: 40px;
   letter-spacing: -1.5px;
   text-transform: capitalize;
+  text-decoration: none;
+  
 
   @media (max-width: ${({ theme }) => theme.breakpoint.navigation.smallPage}px) {
     font-size: 13px;
     line-height: 130%;
   }
+`;
+
+export const StyledLink = styled(Link)`
+  color: ${({ theme }) => theme.colors.black};
 `;
 
 export const StyledNavLink = styled(NavLink)`
@@ -89,5 +96,3 @@ export const StyledNavLink = styled(NavLink)`
       border-radius: 24px;
   }  
 `;
-
-

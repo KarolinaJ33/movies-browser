@@ -1,6 +1,15 @@
 import { toMovies, toPeople } from "../../core/App/routes";
 import { Search } from "./Search";
-import { Container, StyledImg, StyledMoviesBrowser, StyledDiv, StyledNavLink, StyledHeader, StyledNavigation } from "./styled";
+import {
+    Container,
+    StyledImg,
+    StyledMoviesBrowser,
+    StyledDiv,
+    StyledNavLink,
+    StyledHeader,
+    StyledNavigation,
+    StyledLink,
+} from "./styled";
 
 const Navigation = () => {
     return (
@@ -8,7 +17,9 @@ const Navigation = () => {
             <Container>
                 <StyledMoviesBrowser>
                     <StyledImg />
-                    <StyledHeader>Movies Browser</StyledHeader>
+                    <StyledLink to={toMovies}>
+                        <StyledHeader>Movies Browser</StyledHeader>
+                    </StyledLink>
                 </StyledMoviesBrowser>
                 <StyledDiv>
                     <StyledNavLink to={toMovies}>Movies</StyledNavLink>
@@ -17,6 +28,6 @@ const Navigation = () => {
             </Container>
             <Search />
         </StyledNavigation>
-    )
+    );
 };
 export default Navigation;
